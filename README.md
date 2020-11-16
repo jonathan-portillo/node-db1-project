@@ -32,9 +32,19 @@ Visit [SQL Try Editor at W3Schools.com](https://www.w3schools.com/Sql/trysql.asp
   SELECT Phone FROM Suppliers
   WHERE SupplierID="11"
 - list first 10 orders placed, sorted descending by the order date. The order with date 1997-02-12 should be at the top.
+  SELECT Orderdate FROM Orders
+  ORDER BY Orderdate DESC
+  LIMIT 10
 
 - find all customers that live in London, Madrid, or Brazil. Returns 18 records.
+  SELECT \* FROM Customers
+  WHERE City='London' OR City='Madrid' OR Country='Brazil'
+  ORDER BY Country
 - add a customer record for _"The Shire"_, the contact name is _"Bilbo Baggins"_ the address is _"1 Hobbit-Hole"_ in _"Bag End"_, postal code _"111"_ and the country is _"Middle Earth"_.
+  UPDATE Customers
+  SET CustomerName = 'TheShire', ContactName='Bilbo Baggins', Address='1 Hobbit Hole', PostalCode='111', Country='Middle Earth'
+  WHERE CustomerID = 91
+
 - update _Bilbo Baggins_ record so that the postal code changes to _"11122"_.
 
 **Clicking the `Restore Database` button in the page will repopulate the database with the original data and discard all changes you have made**.
